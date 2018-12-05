@@ -2,12 +2,11 @@
 
 import itertools
 
-def answer1():
-	return sum(int(line) for line in open('input1.txt'))
-print(answer1())
+def part1(lines):
+	return sum(int(line) for line in lines)
 
-def answer2():
-	inputs = [int(line) for line in open('input1.txt')]
+def part2(lines):
+	inputs = [int(line) for line in lines]
 	seen = set([0])
 	pos = 0
 	for n in itertools.cycle(inputs):
@@ -16,4 +15,6 @@ def answer2():
 			return pos
 		seen.add(pos)
 
-print(answer2())
+if __name__ == '__main__':
+	print(part1(open('input01.txt')))
+	print(part2(open('input01.txt')))
