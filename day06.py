@@ -12,7 +12,6 @@ def symbol(i):
 
 def part1(filename):
     coords = np.loadtxt(filename, delimiter=', ').astype(int)
-    # coords = [tuple(map(int, re.findall(r'\d+', line))) for line in open(filename)]
     mx = max(x for x, _ in coords)+1
     my = max(y for _, y in coords)+1
     grid = np.full((my, mx), -1)
@@ -40,19 +39,17 @@ def part1(filename):
     return counts.most_common(1)[0][1]
 
 def part2(filename, below):
-    coords = [tuple(map(int, re.findall(r'\d+', line))) for line in open(filename)]
-    mx = max(x for x, _ in coords)+1
-    my = max(y for _, y in coords)+1
-    grid = [[0 for x in range(mx)] for y in range(my)]
+    coords = np.loadtxt(filename, delimiter=', ').astype(int)
+    mx, my = coords.max(0)+1
+    grid = np.zeros((my, mx))
+    
+    # meshgrid - arange across each axis
+    dy, dx = np.mgrid[0:my, 0:mx]
+    for ci, (cx, cy) in enumerate(coords):
+        grid += (np.absolute(dx - cx) + np.absolute(dy - cy))
 
-    for x in range(mx):
-        for y in range(my):
-            for ci, (cx, cy) in enumerate(coords):
-                d = abs(cx-x) + abs(cy-y)
-                grid[y][x] += d
-
-    return sum(1 for x in range(mx) for y in range(my) if grid[y][x] < below)
+    return (grid < below).sum()
 
 if __name__ == '__main__':
-    print(part1('input06.txt'))
+    # print(part1('input06.txt'))
     print(part2('input06.txt', 10000))
