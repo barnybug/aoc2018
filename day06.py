@@ -51,5 +51,5 @@ def part2(filename, below):
     return (grid < below).sum()
 
 if __name__ == '__main__':
-    # print(part1('input06.txt'))
+    print(part1('input06.txt'))
     print(part2('input06.txt', 10000))
