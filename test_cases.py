@@ -1,5 +1,5 @@
 import day01, day02, day03, day04, day05
-import day06, day07, day08
+import day06, day07, day08, day09
 
 def test_day01_part1():
     assert day01.part1('+1, -2, +3, +1'.split(', ')) == 3
@@ -54,3 +54,19 @@ def test_day08_part1():
 
 def test_day08_part2():
     assert day08.part2('test08.txt') == 66
+
+def test_day09_part1():
+    assert day09.part1(9, 25) == 32
+    assert day09.part1(10, 1618) == 8317
+    assert day09.part1(13, 7999) == 146373
+    assert day09.part1(17, 1104) == 2764
+    assert day09.part1(21, 6111) == 54718
+    assert day09.part1(30, 5807) == 37305
+
+def test_day09_part2():
+    assert day09.part2(9, 25) == 32
+    assert day09.part2(10, 1618) == 8317
+    assert day09.part2(13, 7999) == 146373
+    assert day09.part2(17, 1104) == 2764
+    assert day09.part2(21, 6111) == 54718
+    assert day09.part2(30, 5807) == 37305
