@@ -1,6 +1,6 @@
 import day01, day02, day03, day04, day05
 import day06, day07, day08, day09, day10
-import day11, day12, day13
+import day11, day12, day13, day14
 
 def test_day01_part1():
     assert day01.part1('+1, -2, +3, +1'.split(', ')) == 3
@@ -94,3 +94,15 @@ def test_day13_part1():
 
 def test_day13_part2():
     assert day13.part2('test13_2.txt') == '6,4'
+
+def test_day14_part1():
+    assert day14.part1(9) == '5158916779'
+    assert day14.part1(5) == '0124515891'
+    assert day14.part1(18) == '9251071085'
+    assert day14.part1(2018) == '5941429882'
+
+def test_day14_part2():
+    assert day14.part2('51589') == 9
+    assert day14.part2('01245') == 5
+    assert day14.part2('92510') == 18
+    assert day14.part2('59414') == 2018
