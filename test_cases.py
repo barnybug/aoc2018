@@ -1,6 +1,8 @@
 import day01, day02, day03, day04, day05
 import day06, day07, day08, day09, day10
-import day11, day12, day13, day14
+import day11, day12, day13, day14, day15
+
+import itertools
 
 def test_day01_part1():
     assert day01.part1('+1, -2, +3, +1'.split(', ')) == 3
@@ -106,3 +108,36 @@ def test_day14_part2():
     assert day14.part2('01245') == 5
     assert day14.part2('92510') == 18
     assert day14.part2('59414') == 2018
+
+def test_day15_choose_target():
+    lines = '#######\n#E..G.#\n#...#.#\n#.G.#G#\n#######'.split()
+    board = day15.create_board(lines)
+    unit = board[1,1]
+    targets = day15.get_targets(unit, board)
+    target = day15.choose_target((1,1), targets, board)
+    assert target == (3, 1)
+
+def test_day15_example():
+    lines = '#########\n#G..G..G#\n#.......#\n#.......#\n#G..E..G#\n#.......#\n#.......#\n#G..G..G#\n#########'.split()
+    day15.part1(lines)
+
+def test_day15_part1():
+    tests = open('test15.txt')
+    games = [list(group) for k, group in itertools.groupby(tests, lambda s: s != '\n') if k]
+
+    assert day15.part1(games[0]) == 27730
+    assert day15.part1(games[1]) == 36334
+    assert day15.part1(games[2]) == 39514
+    assert day15.part1(games[3]) == 27755
+    assert day15.part1(games[4]) == 28944
+    assert day15.part1(games[5]) == 18740
+
+def test_day15_part2():
+    tests = open('test15.txt')
+    games = [list(group) for k, group in itertools.groupby(tests, lambda s: s != '\n') if k]
+
+    assert day15.part2(games[0]) == 4988
+    assert day15.part2(games[2]) == 31284
+    assert day15.part2(games[3]) == 3478
+    assert day15.part2(games[4]) == 6474
+    assert day15.part2(games[5]) == 1140
