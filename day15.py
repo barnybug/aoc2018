@@ -19,11 +19,11 @@ class Elf(Combatant):
 
 def print_board(board):
     xs = [x for x,y in board.keys()]
-    ys = [x for x,y in board.keys()]
+    ys = [y for x,y in board.keys()]
     print('\n'.join(
         ''.join(
             str(board[x,y]) if (x,y) in board else '.'
-            for x in range(min(ys), max(ys)+1)
+            for x in range(min(xs), max(xs)+1)
         )
         for y in range(min(ys), max(ys)+1)
     ))

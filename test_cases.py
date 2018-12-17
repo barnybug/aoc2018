@@ -1,7 +1,7 @@
 import day01, day02, day03, day04, day05
 import day06, day07, day08, day09, day10
 import day11, day12, day13, day14, day15
-import day16
+import day16, day17
 
 import itertools
 
@@ -145,3 +145,10 @@ def test_day15_part2():
 
 def test_day16_part1():
     assert day16.parts('test16.txt', part2=False) == 1
+
+def test_day17_part1():
+    assert day17.part1('test17.txt') == 57
+    assert day17.part1('test17_2.txt') == 66
+
+def test_day17_part2():
+    assert day17.part2('test17.txt') == 29
