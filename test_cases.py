@@ -2,6 +2,7 @@ import day01, day02, day03, day04, day05
 import day06, day07, day08, day09, day10
 import day11, day12, day13, day14, day15
 import day16, day17, day18, day19, day20
+import day21
 
 import itertools
 
@@ -168,3 +169,6 @@ def test_day20_part1():
     assert day20.part1('^ENNWSWW(NEWS|)SSSEEN(WNSE|)EE(SWEN|)NNN$)') == 18
     assert day20.part1('^ESSWWN(E|NNENN(EESS(WNSE|)SSS|WWWSSSSE(SW|NNNE)))$') == 23
     assert day20.part1('^WSSEESWWWNW(S|NENNEEEENN(ESSSSW(NWSW|SSEN)|WSWWN(E|WWS(E|SS))))$') == 31
+
+def test_day21():
+    assert list(itertools.islice(day21.seq(), 10)) == [6619857, 7435730, 9149508, 14415175, 5500417, 9362280, 12034598, 8811079, 7737914, 2475507]
