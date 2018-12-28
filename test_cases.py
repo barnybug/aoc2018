@@ -1,7 +1,7 @@
 import day01, day02, day03, day04, day05
 import day06, day07, day08, day09, day10
 import day11, day12, day13, day14, day15
-import day16, day17, day18, day19
+import day16, day17, day18, day19, day20
 
 import itertools
 
@@ -161,3 +161,10 @@ def test_day19_part1():
 
 def test_day19_part2():
     assert day19.part2('input19.txt') == 12690000
+
+def test_day20_part1():
+    assert day20.part1('^WNE$') == 3
+    assert day20.part1('^ENWWW(NEEE|SSE(EE|N))$') == 10
+    assert day20.part1('^ENNWSWW(NEWS|)SSSEEN(WNSE|)EE(SWEN|)NNN$)') == 18
+    assert day20.part1('^ESSWWN(E|NNENN(EESS(WNSE|)SSS|WWWSSSSE(SW|NNNE)))$') == 23
+    assert day20.part1('^WSSEESWWWNW(S|NENNEEEENN(ESSSSW(NWSW|SSEN)|WSWWN(E|WWS(E|SS))))$') == 31

@@ -82,7 +82,7 @@ class SparseGrid(object):
             return ''
         return '\n'.join(
             ''.join(
-                self.grid.get((x,y), self.default)
+                str(self.grid.get((x,y), self.default))
                 for x in self.xrange()
             )
             for y in self.yrange()
@@ -126,6 +126,12 @@ class SparseGrid(object):
 
     def count(self):
         return collections.Counter(self.grid.values())
+
+    def values(self):
+        return self.grid.values()
+
+    def __contains__(self, item):
+        return item in self.grid
 
     @classmethod
     def parse(cls, lines, empty='.'):
