@@ -2,7 +2,7 @@ import day01, day02, day03, day04, day05
 import day06, day07, day08, day09, day10
 import day11, day12, day13, day14, day15
 import day16, day17, day18, day19, day20
-import day21
+import day21, day22
 
 import itertools
 
@@ -172,3 +172,9 @@ def test_day20_part1():
 
 def test_day21():
     assert list(itertools.islice(day21.seq(), 10)) == [6619857, 7435730, 9149508, 14415175, 5500417, 9362280, 12034598, 8811079, 7737914, 2475507]
+
+def test_day22_part1():
+    assert day22.part1(510, (10, 10)) == 114
+
+def test_day22_part2():
+    assert day22.part2(510, (10, 10)) == 45
