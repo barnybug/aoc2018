@@ -2,7 +2,7 @@ import day01, day02, day03, day04, day05
 import day06, day07, day08, day09, day10
 import day11, day12, day13, day14, day15
 import day16, day17, day18, day19, day20
-import day21, day22, day23
+import day21, day22, day23, day24
 
 import itertools
 
@@ -184,3 +184,9 @@ def test_day23_part1():
 
 def test_day23_part2():
     assert day23.part2('test23_2.txt') == 36
+
+def test_day24_part1():
+    assert day24.part1('test24.txt') == 5216
+
+def test_day24_part2():
+    assert day24.part2('test24.txt') == 51
