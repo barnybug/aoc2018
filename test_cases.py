@@ -2,7 +2,7 @@ import day01, day02, day03, day04, day05
 import day06, day07, day08, day09, day10
 import day11, day12, day13, day14, day15
 import day16, day17, day18, day19, day20
-import day21, day22, day23, day24
+import day21, day22, day23, day24, day25
 
 import itertools
 
@@ -190,3 +190,43 @@ def test_day24_part1():
 
 def test_day24_part2():
     assert day24.part2('test24.txt') == 51
+
+def test_day25_part1():
+    assert day25.part1('''0,0,0,0
+3,0,0,0
+0,3,0,0
+0,0,3,0
+0,0,0,3
+0,0,0,6
+9,0,0,0
+12,0,0,0''') == 2
+    assert day25.part1('''-1,2,2,0
+0,0,2,-2
+0,0,0,-2
+-1,2,0,0
+-2,-2,-2,2
+3,0,2,-1
+-1,3,2,2
+-1,0,-1,0
+0,2,1,-2
+3,0,0,0''') == 4
+    assert day25.part1('''1,-1,0,1
+2,0,-1,0
+3,2,-1,0
+0,0,3,1
+0,0,-1,-1
+2,3,-2,0
+-2,2,0,0
+2,-2,0,-1
+1,-1,0,-1
+3,2,0,2''') == 3
+    assert day25.part1('''1,-1,-1,-2
+-2,-2,0,1
+0,2,1,3
+-2,3,-2,1
+0,2,3,-2
+-1,-1,1,-2
+0,-2,-1,0
+-2,2,3,-1
+1,2,2,0
+-1,-2,0,-2''') == 8
